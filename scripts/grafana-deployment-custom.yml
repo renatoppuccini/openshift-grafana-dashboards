@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
@@ -29,7 +29,7 @@ spec:
       containers:
       - args:
         - -config=/etc/grafana/grafana.ini
-        image: registry.access.redhat.com/openshift3/grafana:v3.11
+        image: registry.redhat.io/openshift4/ose-grafana
         imagePullPolicy: IfNotPresent
         name: grafana
         resources:
@@ -68,7 +68,8 @@ spec:
         - -openshift-ca=/etc/pki/tls/cert.pem
         - -openshift-ca=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt
         - -skip-auth-regex=^/metrics
-        image: registry.access.redhat.com/openshift3/oauth-proxy:v3.11
+        image: registry.redhat.io/openshift4/ose-oauth-proxy
+        imagePullPolicy: IfNotPresent
         imagePullPolicy: IfNotPresent
         name: grafana-proxy
         ports:
