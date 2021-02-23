@@ -1,5 +1,5 @@
 # WIP to update to OpenShift 4.x
-# DEPRECATED ~Custom Grafana dashboards for OpenShift v3.11~
+# DEPRECATED Custom Grafana dashboards for ~OpenShift v3.11~
 
 ## Summary by nodetype
 Shows summary metrics for all three nodetypes (master, infra, compute). Different type of nodes run different type of workloads, so it’s useful to monitor resource utilization grouped this way (e.g. How much memory do I have to run application pods?). 
